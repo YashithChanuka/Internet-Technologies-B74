@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lesson - jQuery Basics</title>
+  </head>
+  <body>
+    <h1 id="heading">jQuery Basics</h1>
+    <p class="paragraph">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt enim
+      tenetur aperiam inventore sunt ipsum aliquam praesentium quam facilis
+      magnam saepe totam quod asperiores dicta, expedita repudiandae dolores sed
+      similique?
+    </p>
+    <button>Click Here</button>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        console.log("jQuery is ready to use!");
+        $("#heading").css("color", "red");
+        $(".paragraph").css("background-color", "lightgray");
+        $("button").css("background-color", "green").css("color", "white");
+
+        $("button").on("click", function () {
+          //   alert("Button was clicked!");
+          //   $("p").hide();
+          //   $("p").toggle();
+        });
+
+        function handlerIn() {
+          $(this).css("background-color", "yellow");
+        }
+
+        function handlerOut() {
+          $(this).css("background-color", "lightgray");
+        }
+
+        $("p").on("mouseenter", handlerIn).on("mouseleave", handlerOut);
+      });
+    </script>
+  </body>
+</html>
